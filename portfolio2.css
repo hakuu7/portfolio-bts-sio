@@ -6,8 +6,8 @@
 :root {
   --marine: #1b2b48;
   --marine-clair: #26395c;
-  --acier: #3d6a99;
-  --ciel: #e8eef6;
+  --acier: #3a6fae;
+  --ciel: #e6eef8;
   --papier: #f5f6f8;
   --blanc: #ffffff;
   --trait: #d8dee8;
@@ -24,7 +24,7 @@ body {
   margin: 0;
   font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 1.0625rem;
-  line-height: 1.65;
+  line-height: 1.7;
   color: var(--encre);
   background: var(--papier);
 }
@@ -44,7 +44,7 @@ a:hover { color: var(--marine); }
   overflow-y: auto;
 }
 .menu__marque { display: flex; align-items: center; gap: .9rem; text-decoration: none; color: #fff; margin-bottom: 2.25rem; }
-.menu__marque img { width: 58px; height: auto; background: #fff; border-radius: 6px; padding: 4px; }
+.menu__marque img { width: 58px; height: auto; background: #fff; border-radius: 8px; padding: 4px; }
 .menu__nom { font-family: Georgia, "Times New Roman", serif; font-size: 1.2rem; line-height: 1.25; }
 .menu__nom small { display: block; font-family: "Segoe UI", Arial, sans-serif; font-size: .8rem; color: #9fb3d1; margin-top: .2rem; }
 
@@ -52,7 +52,7 @@ a:hover { color: var(--marine); }
 .menu li + li { margin-top: .15rem; }
 .menu a.lien {
   position: relative; display: block;
-  padding: .6rem .9rem; border-radius: 6px;
+  padding: .6rem .9rem; border-radius: 8px;
   color: #dbe4f1; text-decoration: none; font-size: .98rem;
   transition: background-color .2s ease, color .2s ease, padding-left .2s ease;
 }
@@ -87,13 +87,14 @@ h3 { font-size: 1.2rem; margin: 0 0 .4rem; }
 .intro { font-size: 1.15rem; color: var(--encre-douce); max-width: 46rem; margin: 0 0 2rem; }
 p { max-width: 46rem; }
 
-.titre-page { padding-bottom: 1.5rem; margin-bottom: 2rem; border-bottom: 2px solid var(--marine); }
+.titre-page { padding-bottom: 1.5rem; margin-bottom: 2rem; border-bottom: 1px solid var(--trait); position: relative; }
 
 /* ---------- Cartes & grilles ---------- */
 .grille { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
 .carte {
-  background: var(--blanc); border: 1px solid var(--trait); border-radius: 8px;
+  background: var(--blanc); border: 1px solid var(--trait); border-radius: 12px;
   padding: 1.4rem 1.5rem;
+  box-shadow: 0 1px 2px rgba(27, 43, 72, .06);
   transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
 .carte p { margin: .3rem 0 0; color: var(--encre-douce); font-size: .98rem; }
@@ -104,7 +105,7 @@ a.carte:hover h3 { color: var(--acier); }
 
 /* ---------- Boutons ---------- */
 .bouton {
-  display: inline-block; padding: .7rem 1.3rem; border-radius: 6px;
+  display: inline-block; padding: .7rem 1.3rem; border-radius: 8px;
   background: var(--marine); color: #fff; text-decoration: none; font-weight: 600; font-size: .98rem;
   border: 2px solid var(--marine);
   transition: background-color .2s ease, color .2s ease, transform .15s ease;
@@ -117,7 +118,7 @@ a.carte:hover h3 { color: var(--acier); }
 
 /* ---------- Accueil ---------- */
 .accueil { display: grid; gap: 2rem; grid-template-columns: 1fr; align-items: start; }
-.cv-apercu { border: 1px solid var(--trait); border-radius: 8px; background: var(--blanc); padding: .75rem; }
+.cv-apercu { border: 1px solid var(--trait); border-radius: 12px; background: var(--blanc); padding: .75rem; }
 .cv-apercu img { display: block; width: 100%; height: auto; border-radius: 4px; }
 .cv-apercu figcaption { font-size: .88rem; color: var(--encre-douce); padding: .6rem .25rem 0; }
 @media (min-width: 1100px) { .accueil { grid-template-columns: 1.1fr .9fr; } }
@@ -137,9 +138,9 @@ a.carte:hover h3 { color: var(--acier); }
 .competence { display: grid; grid-template-columns: minmax(130px, 1fr) 2fr auto; gap: .75rem 1rem; align-items: center; padding: .55rem 0; }
 .competence + .competence { border-top: 1px solid var(--trait); }
 .competence__nom { font-weight: 600; }
-.competence__barre { height: 8px; border-radius: 8px; background: var(--ciel); overflow: hidden; }
+.competence__barre { height: 8px; border-radius: 12px; background: var(--ciel); overflow: hidden; }
 .competence__barre span {
-  display: block; height: 100%; width: var(--niveau); border-radius: 8px; background: var(--acier);
+  display: block; height: 100%; width: var(--niveau); border-radius: 12px; background: var(--acier);
   transform-origin: left; animation: remplir 1s .3s ease-out both;
 }
 .competence__niveau { font-size: .88rem; color: var(--encre-douce); min-width: 6.5rem; text-align: right; }
@@ -150,8 +151,8 @@ a.carte:hover h3 { color: var(--acier); }
 }
 
 /* ---------- Projets ---------- */
-.projet { display: grid; gap: 1.5rem; grid-template-columns: 1fr; background: var(--blanc); border: 1px solid var(--trait); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
-.projet img { width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--trait); display: block; }
+.projet { display: grid; gap: 1.5rem; grid-template-columns: 1fr; background: var(--blanc); border: 1px solid var(--trait); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
+.projet img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--trait); display: block; }
 .projet dl { margin: .75rem 0 0; display: grid; grid-template-columns: auto 1fr; gap: .25rem 1rem; font-size: .96rem; }
 .projet dt { font-weight: 600; color: var(--marine); }
 .projet dd { margin: 0; color: var(--encre-douce); }
@@ -173,9 +174,9 @@ a.carte:hover h3 { color: var(--acier); }
 .carte--bloc::before { left: 1.1rem; }
 
 /* ---------- Procédures ---------- */
-.procedure { background: var(--blanc); border: 1px solid var(--trait); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.75rem; }
-.procedure object, .procedure iframe { width: 100%; height: 620px; border: 1px solid var(--trait); border-radius: 6px; margin-top: 1rem; background: var(--papier); }
-.figure { margin: 0 0 1.75rem; background: var(--blanc); border: 1px solid var(--trait); border-radius: 8px; padding: 1rem; }
+.procedure { background: var(--blanc); border: 1px solid var(--trait); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.75rem; }
+.procedure object, .procedure iframe { width: 100%; height: 620px; border: 1px solid var(--trait); border-radius: 8px; margin-top: 1rem; background: var(--papier); }
+.figure { margin: 0 0 1.75rem; background: var(--blanc); border: 1px solid var(--trait); border-radius: 12px; padding: 1rem; }
 .figure img { max-width: 100%; height: auto; display: block; margin-inline: auto; }
 .figure figcaption { color: var(--encre-douce); font-size: .92rem; margin-top: .6rem; text-align: center; }
 
@@ -183,7 +184,7 @@ a.carte:hover h3 { color: var(--acier); }
 .contacts { list-style: none; padding: 0; margin: 0; display: grid; gap: .9rem; }
 .contacts li { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding-bottom: .9rem; border-bottom: 1px solid var(--trait); }
 .contacts strong { color: var(--marine); }
-.lettre { background: var(--blanc); border: 1px solid var(--trait); border-radius: 8px; padding: 2rem clamp(1.25rem, 4vw, 2.75rem); font-family: Georgia, "Times New Roman", serif; }
+.lettre { background: var(--blanc); border: 1px solid var(--trait); border-radius: 12px; padding: 2rem clamp(1.25rem, 4vw, 2.75rem); font-family: Georgia, "Times New Roman", serif; }
 .lettre p { max-width: none; }
 
 /* ---------- Adaptation mobile / tablette ---------- */
@@ -253,7 +254,7 @@ a.carte:hover h3 { color: var(--acier); }
 .bulles .bulle:nth-child(2) { animation-delay: .12s; }
 
 /* Image de projet : léger zoom au survol */
-.projet .cadre { overflow: hidden; border-radius: 6px; border: 1px solid var(--trait); }
+.projet .cadre { overflow: hidden; border-radius: 8px; border: 1px solid var(--trait); }
 .projet .cadre img { border: 0; border-radius: 0; transition: transform .5s ease; }
 .projet:hover .cadre img { transform: scale(1.03); }
 
@@ -273,3 +274,11 @@ a.carte:hover h3 { color: var(--acier); }
   animation: pulsation 1.8s ease-in-out infinite;
 }
 @keyframes pulsation { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.7); } }
+
+/* Légère retouche de style : barre d'accent sous le titre de chaque page */
+.titre-page::after {
+  content: ""; position: absolute; left: 0; bottom: -2px;
+  width: 72px; height: 3px; border-radius: 3px; background: var(--acier);
+  animation: barre .7s .25s ease-out backwards;
+}
+@keyframes barre { from { width: 0; } to { width: 72px; } }
