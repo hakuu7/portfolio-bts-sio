@@ -260,3 +260,16 @@ a.carte:hover h3 { color: var(--acier); }
 /* Logo du menu */
 .menu__marque img { transition: transform .3s ease; }
 .menu__marque:hover img { transform: rotate(-4deg) scale(1.04); }
+
+/* Projets : cartes sans image et badge « En cours » */
+.projet--texte { grid-template-columns: 1fr; }
+.badge-cours {
+  display: inline-flex; align-items: center; gap: .45rem; vertical-align: middle;
+  margin-left: .6rem; padding: .15rem .75rem; border-radius: 20px;
+  background: var(--ciel); color: var(--marine); font-family: "Segoe UI", Arial, sans-serif; font-size: .8rem; font-weight: 600;
+}
+.badge-cours::before {
+  content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: var(--acier);
+  animation: pulsation 1.8s ease-in-out infinite;
+}
+@keyframes pulsation { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.7); } }
